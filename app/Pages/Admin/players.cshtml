@@ -1,0 +1,102 @@
+@page
+@model ElhagzElmomtaz.Pages.Admin.PlayersModel
+@{
+    ViewData["Title"] = "Players";
+    Layout = "_AdminLayout";
+}
+
+<div class="card">
+  <div class="card-body">
+    <div class="d-sm-flex d-block align-items-center justify-content-between mb-4">
+      <h5 class="card-title fw-semibold mb-0">Players</h5>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table text-nowrap mb-0 align-middle">
+        <thead class="text-dark fs-4">
+          <tr>
+            <th class="border-bottom-0"><h6 class="fw-semibold mb-0">#</h6></th>
+            <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Player</h6></th>
+            <th class="border-bottom-0"><h6 class="fw-semibold mb-0">City</h6></th>
+            <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Skill Level</h6></th>
+            <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Verified</h6></th>
+            <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Joined</h6></th>
+            <th class="border-bottom-0 text-end"><h6 class="fw-semibold mb-0">Action</h6></th>
+          </tr>
+        </thead>
+        <tbody>
+          @{ var i = 0; }
+          @foreach (var p in Model.Players)
+          {
+            i++;
+            <tr>
+              <td class="border-bottom-0"><h6 class="fw-semibold mb-0">@i</h6></td>
+              <td class="border-bottom-0">
+                <div class="d-flex align-items-center gap-3">
+                  <img src="/admin/images/profile/user-1.jpg" class="rounded-circle" width="40" height="40" alt="">
+                  <div>
+                    <h6 class="fw-semibold mb-1">@p.FullName</h6>
+                    <span class="fw-normal">@(string.IsNullOrEmpty(p.Nickname) ? "—" : p.Nickname)</span>
+                  </div>
+                </div>
+              </td>
+              <td class="border-bottom-0"><p class="mb-0 fw-normal">@p.City</p></td>
+              <td class="border-bottom-0">
+                <span class="badge bg-light-primary text-primary rounded-3 fw-semibold">@p.SkillLevel</span>
+              </td>
+              <td class="border-bottom-0">
+                @if (p.IsVerified)
+                {
+                  <span class="badge bg-success rounded-3 fw-semibold">Verified</span>
+                }
+                else
+                {
+                  <span class="badge bg-light-danger text-danger rounded-3 fw-semibold">Unverified</span>
+                }
+              </td>
+              <td class="border-bottom-0"><p class="mb-0 fw-normal">@p.CreatedAt</p></td>
+              <td class="border-bottom-0 text-end">
+                <button type="button" class="btn btn-sm btn-light-danger text-danger"
+                        data-bs-toggle="modal" data-bs-target="#removePlayerModal"
+                        data-name="@p.FullName">
+                  <i class="ti ti-trash"></i> Remove
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Remove confirmation modal -->
+<div class="modal fade" id="removePlayerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Remove Player</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to remove <strong class="remove-name"></strong>? This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <script>
+    (function () {
+      var modal = document.getElementById('removePlayerModal');
+      modal.addEventListener('show.bs.modal', function (e) {
+        var name = e.relatedTarget.getAttribute('data-name');
+        modal.querySelector('.remove-name').textContent = name;
+      });
+    })();
+  </script>
+}

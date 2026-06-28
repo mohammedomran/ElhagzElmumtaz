@@ -1,0 +1,42 @@
+@page
+@model ElhagzElmomtaz.Pages.Admin.MatchEditModel
+@{
+    ViewData["Title"] = "Edit Friendly Match";
+    Layout = "_AdminLayout";
+}
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title fw-semibold mb-4">Edit Friendly Match</h5>
+
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Stadium</label>
+        <select class="form-select">
+          @foreach (var s in Model.Stadiums)
+          {
+            <option selected="@(s == Model.Stadium)">@s</option>
+          }
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control" value="@Model.ScheduledDate">
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">From</label>
+          <input type="time" class="form-control" value="@Model.FromTime">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">To</label>
+          <input type="time" class="form-control" value="@Model.ToTime">
+        </div>
+      </div>
+      <div class="d-flex gap-2 mt-2">
+        <a href="/Admin/matches" class="btn btn-primary">Save</a>
+        <a href="/Admin/matches" class="btn btn-light">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
