@@ -1,0 +1,99 @@
+@page
+@model LeaguesModel
+@{
+    ViewData["Title"] = "دوريات — الحجز الممتاز";
+}
+  <div class="app-page">
+
+    <header class="app-bar">
+      <h1 class="app-bar__brand">الحجز الممتاز</h1>
+      <a href="#" class="icon-btn" aria-label="الإشعارات">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      </a>
+    </header>
+
+    <main class="app-content">
+
+      <div class="section-head" style="margin-top:0">
+        <div>
+          <h1 class="section-title" style="color:var(--primary)">الدوريات</h1>
+          <p class="section-sub">انضم لدوري واتنافس مع فريقك</p>
+        </div>
+      </div>
+
+      <!-- League section -->
+      <div class="day-label">دوري الجمعة</div>
+
+      <!-- League card 1 -->
+      <article class="league-card">
+        <div class="league-card__body">
+          <div class="league-card__name">دوري الجمعة — الموسم الأول</div>
+          <div class="league-card__meta">
+            <div class="league-card__row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
+              <span>كل يوم جمعة</span>
+            </div>
+            <div class="league-card__row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span>من 8:00 م لـ 10:00 م</span>
+            </div>
+            <div class="league-card__row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>التجمع الخامس، القاهرة</span>
+            </div>
+          </div>
+          <div class="teams-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:14px;height:14px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <strong>4</strong> فرق منضمة
+          </div>
+        </div>
+        <div class="league-card__side">
+          <span class="price-pill">500 ج</span>
+          <a href="/league-details" class="btn-enter-league">الدخول بفريق</a>
+        </div>
+      </article>
+
+      <!-- League card 2 (future placeholder, dimmed) -->
+      <article class="league-card" style="opacity:.5;pointer-events:none">
+        <div class="league-card__body">
+          <div class="league-card__name">دوري الجمعة — الموسم الثاني</div>
+          <div class="league-card__meta">
+            <div class="league-card__row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
+              <span>كل يوم جمعة</span>
+            </div>
+            <div class="league-card__row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span>من 6:00 م لـ 8:00 م</span>
+            </div>
+          </div>
+          <span class="pill pill--accent pill--dot">قريبًا</span>
+        </div>
+        <div class="league-card__side">
+          <span class="price-pill">—</span>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Bottom tab bar -->
+    <nav class="tab-bar">
+      <a href="/matches" class="tab-bar__item">
+        <i class="fa-solid fa-futbol"></i>
+        ماتشات
+      </a>
+      <a href="/leagues" class="tab-bar__item is-active">
+        <i class="fa-solid fa-ranking-star"></i>
+        دوريات
+      </a>
+      <a href="/tournaments" class="tab-bar__item">
+        <i class="fa-solid fa-trophy"></i>
+        بطولات
+      </a>
+      <a href="/profile" class="tab-bar__item">
+        <i class="fa-solid fa-user"></i>
+        حسابي
+      </a>
+    </nav>
+
+  </div>

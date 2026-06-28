@@ -1,0 +1,3 @@
+wwwroot\assets\logo.png
+wwwroot\css\styles.css
+D:\TechangeSolutions\ElhagzElmomtaz\ElhagzElmumtaz\app\ElhagzElmomtaz\ElhagzElmomtaz\wwwroot\css\styles.css

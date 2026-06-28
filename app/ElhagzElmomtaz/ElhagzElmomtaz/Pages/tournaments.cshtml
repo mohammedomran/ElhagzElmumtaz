@@ -1,0 +1,61 @@
+@page
+@model TournamentsModel
+@{
+    ViewData["Title"] = "بطولات — الحجز الممتاز";
+}
+  <div class="app-page">
+
+    <header class="app-bar">
+      <h1 class="app-bar__brand">الحجز الممتاز</h1>
+      <a href="#" class="icon-btn" aria-label="الإشعارات">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      </a>
+    </header>
+
+    <main class="app-content">
+      <div class="coming-soon">
+
+        <span class="coming-soon__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 4h8v3a4 4 0 0 1-8 0V4z"/>
+            <path d="M8 5H5v2a3 3 0 0 0 3 3M16 5h3v2a3 3 0 0 1-3 3"/>
+            <path d="M9 14h6M10 14v4M14 14v4M8 20h8"/>
+          </svg>
+        </span>
+
+        <h1 class="coming-soon__title">بطولات ممتازة</h1>
+
+        <p class="coming-soon__sub">
+          بطولات حصرية للاعبين المحترفين قريبًا جدًا!
+          استعد لتجربة بطولات لا مثيل لها.
+        </p>
+
+        <span class="coming-soon__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          قريبًا...
+        </span>
+
+      </div>
+    </main>
+
+    <!-- Bottom tab bar -->
+    <nav class="tab-bar">
+      <a href="/matches" class="tab-bar__item">
+        <i class="fa-solid fa-futbol"></i>
+        ماتشات
+      </a>
+      <a href="/leagues" class="tab-bar__item">
+        <i class="fa-solid fa-ranking-star"></i>
+        دوريات
+      </a>
+      <a href="/tournaments" class="tab-bar__item is-active">
+        <i class="fa-solid fa-trophy"></i>
+        بطولات
+      </a>
+      <a href="/profile" class="tab-bar__item">
+        <i class="fa-solid fa-user"></i>
+        حسابي
+      </a>
+    </nav>
+
+  </div>

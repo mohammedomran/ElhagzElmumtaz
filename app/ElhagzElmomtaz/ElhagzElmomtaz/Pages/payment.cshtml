@@ -1,0 +1,132 @@
+@page
+@model PaymentModel
+@{
+    ViewData["Title"] = "الدفع — الحجز الممتاز";
+}
+  <div class="app-page">
+
+    <header class="app-bar">
+      <h1 class="app-bar__title">ادفع عشان تحجز</h1>
+      <a href="/match-details" class="app-bar__back" aria-label="رجوع">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </header>
+
+    <main class="app-content">
+
+      <!-- Order summary -->
+      <section class="glass-card" style="margin-bottom:var(--s-lg)">
+        <div class="summary-row">
+          <span class="summary-row__key">الملعب:</span>
+          <span class="summary-row__val">خماسي المعادي</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-row__key">السعر:</span>
+          <span class="summary-row__val">90 ج</span>
+        </div>
+        <div class="summary-row summary-row--total">
+          <span class="summary-row__key">الإجمالي:</span>
+          <span class="summary-row__val">90 ج</span>
+        </div>
+      </section>
+
+      <!-- Discount code -->
+      <div class="field">
+        <label class="field-label" for="promo">كود الخصم</label>
+        <div class="promo-row">
+          <div class="input-shell"><input id="promo" type="text" placeholder="دخل الكود هنا" /></div>
+          <button class="btn-apply" type="button">تفعيل</button>
+        </div>
+      </div>
+
+      <!-- Payment methods -->
+      <label class="field-label" style="display:block;margin-top:var(--s-lg)">هتدفع إزاي؟</label>
+      <div class="pay-methods">
+
+        <!-- Vodafone Cash -->
+        <div class="pay-card" data-pay role="button" tabindex="0">
+          <span class="pay-card__logo pay-card__logo--vf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          </span>
+          <div class="pay-card__name">فودافون كاش</div>
+          <div class="copy-field">
+            <button class="copy-field__btn" data-copy="01012345678" aria-label="نسخ">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            </button>
+            <span class="copy-field__text">01012345678</span>
+          </div>
+        </div>
+
+        <!-- InstaPay -->
+        <div class="pay-card is-active" data-pay role="button" tabindex="0">
+          <span class="pay-card__logo pay-card__logo--ip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </span>
+          <div class="pay-card__name">انستا باي</div>
+          <div class="qr-box" aria-hidden="true">
+            <svg viewBox="0 0 29 29" fill="currentColor"><path d="M0 0h9v9H0V0zm2 2v5h5V2H2zm18-2h9v9h-9V0zm2 2v5h5V2h-5zM0 20h9v9H0v-9zm2 2v5h5v-5H2zm9-20h2v2h-2V2zm0 4h2v4h-2V6zm4-4h2v2h-2V2zm0 4h2v2h-2V6zm-4 8h2v2h-2v-2zm0 4h2v2h-2v-2zm0 4h2v3h-2v-3zm4-8h2v2h-2v-2zm0 4h2v6h-2v-6zm4-12h2v2h-2v-2zm0 4h2v2h-2V6zm0 4h6v2h-6v-2zm4 0h2v2h-2v-2zm0 4h2v2h-2v-2zm-4 4h2v2h-2v-2zm0 4h2v3h-2v-3zm4-4h2v2h-2v-2zm0 4h2v3h-2v-3z"/></svg>
+          </div>
+          <div class="copy-field">
+            <button class="copy-field__btn" data-copy="instapay.me/user" aria-label="نسخ">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            </button>
+            <span class="copy-field__text">instapay.me/user</span>
+          </div>
+          <div class="copy-field">
+            <button class="copy-field__btn" data-copy="01012345678" aria-label="نسخ">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            </button>
+            <span class="copy-field__text">01012345678</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload receipt -->
+      <p class="upload-hint">حوّل الفلوس وارفع صورة الوصل هنا</p>
+      <label class="upload-box" for="receipt">
+        <img id="receipt-preview" alt="" hidden />
+        <span id="receipt-default" style="display:flex;flex-direction:column;align-items:center;gap:var(--s-sm)">
+          <span class="upload-box__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V8m0 0-3 3m3-3 3 3"/><path d="M20 16.5A4.5 4.5 0 0 0 17.5 8h-1A6.5 6.5 0 1 0 5 14.7"/></svg>
+          </span>
+          <span class="upload-box__label">ارفع صورة الإيصال</span>
+        </span>
+        <input id="receipt" type="file" accept="image/*" hidden />
+      </label>
+    </main>
+
+    <div class="sticky-cta">
+      <a href="/status" class="btn-pitch" style="display:block;text-align:center;line-height:52px;text-decoration:none">تأكيد الدفع</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Select a payment method
+    document.querySelectorAll("[data-pay]").forEach(function (card) {
+      card.addEventListener("click", function () {
+        document.querySelectorAll("[data-pay]").forEach(function (c) { c.classList.remove("is-active"); });
+        card.classList.add("is-active");
+      });
+    });
+
+    // Copy buttons
+    document.querySelectorAll("[data-copy]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        navigator.clipboard && navigator.clipboard.writeText(btn.dataset.copy);
+        btn.classList.add("is-copied");
+        setTimeout(function () { btn.classList.remove("is-copied"); }, 1200);
+      });
+    });
+
+    // Receipt preview
+    document.getElementById("receipt").addEventListener("change", function () {
+      var file = this.files && this.files[0];
+      if (!file) return;
+      var img = document.getElementById("receipt-preview");
+      img.src = URL.createObjectURL(file);
+      img.hidden = false;
+      document.getElementById("receipt-default").style.display = "none";
+    });
+  </script>
