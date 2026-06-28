@@ -1,0 +1,187 @@
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@ViewData["Title"] - الحجز الممتاز</title>
+  <link rel="shortcut icon" type="image/png" href="/admin/images/logos/favicon.png" />
+  <link rel="stylesheet" href="/admin/css/styles.min.css" />
+  @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-center pt-4">
+          <a href="/Admin/sample" class="text-nowrap logo-img">
+            <img src="/assets/logo.png" height="50" alt="logo" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Home</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/sample" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Dashboard</span>
+              </a>
+            </li>
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Management</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/players" aria-expanded="false">
+                <span>
+                  <i class="ti ti-users"></i>
+                </span>
+                <span class="hide-menu">Players</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/teams" aria-expanded="false">
+                <span>
+                  <i class="ti ti-shield"></i>
+                </span>
+                <span class="hide-menu">Teams</span>
+              </a>
+            </li>
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Competitions</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/leagues" aria-expanded="false">
+                <span>
+                  <i class="ti ti-trophy"></i>
+                </span>
+                <span class="hide-menu">Leagues</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/league-registrations" aria-expanded="false">
+                <span>
+                  <i class="ti ti-clipboard-list"></i>
+                </span>
+                <span class="hide-menu">Registrations</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/matches" aria-expanded="false">
+                <span>
+                  <i class="ti ti-ball-football"></i>
+                </span>
+                <span class="hide-menu">Matches</span>
+              </a>
+            </li>
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Finance</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/payments" aria-expanded="false">
+                <span>
+                  <i class="ti ti-cash"></i>
+                </span>
+                <span class="hide-menu">Payments</span>
+              </a>
+            </li>
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">System</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/cities" aria-expanded="false">
+                <span>
+                  <i class="ti ti-map-pin"></i>
+                </span>
+                <span class="hide-menu">Cities</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/stadiums" aria-expanded="false">
+                <span>
+                  <i class="ti ti-soccer-field"></i>
+                </span>
+                <span class="hide-menu">Stadiums</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/notifications" aria-expanded="false">
+                <span>
+                  <i class="ti ti-bell"></i>
+                </span>
+                <span class="hide-menu">Notifications</span>
+              </a>
+            </li>
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Account</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="/Admin/auth/signin" aria-expanded="false">
+                <span>
+                  <i class="ti ti-logout"></i>
+                </span>
+                <span class="hide-menu">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <header class="app-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+            <li class="nav-item d-block d-xl-none">
+              <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                <i class="ti ti-menu-2"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!--  Header End -->
+      <div class="container-fluid">
+        @RenderBody()
+      </div>
+    </div>
+  </div>
+  <script src="/admin/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/admin/js/sidebarmenu.js"></script>
+  <script src="/admin/js/app.min.js"></script>
+  <script src="/admin/libs/simplebar/dist/simplebar.js"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
